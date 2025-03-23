@@ -50,11 +50,13 @@
                 <span class="close-btn" onclick="closeForm()">&times;</span>
                 <h2>Определилась?</h2>
                 <form id="applicationForm">
+                    <label for="contactName">Куда:</label>
                     <select id="marketplace" name="marketplace" required>
                         <option value="ОКЕЙ">ОКЕЙ</option>
                         <option value="7 ШАГОВ">7 ШАГОВ</option>
                         <option value="ЛЕТНА">ЛЕНТА</option>
                     </select>
+                    <label for="contactTime">Во сколько:</label>
                     <input type="text" id="timePicker" placeholder="Выбери время" required>
                     <button type="submit" class="submit-btn">Отправить</button>
                 </form>
@@ -103,11 +105,13 @@
                 <div class="contact-form">
                     <h3>Определилась?</h3>
                     <form id="contactForm">
+                        <label for="contactName">Куда:</label>
                         <select id="contactMarketplace" name="marketplace" required>
                             <option value="ОКЕЙ">ОКЕЙ</option>
                             <option value="7 ШАГОВ">7 ШАГОВ</option>
                             <option value="ЛЕТНА">ЛЕНТА</option>
                         </select>
+                        <label for="contactTime">Во сколько:</label>
                         <input type="text" id="timePicker" placeholder="Выбери время" required>
                         <button type="submit" class="submit-btn">Отправить</button>
                     </form>

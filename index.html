@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПривКдЧдGOвОК</title>
+    <link rel="shortcut icon" href="img/vova.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shops.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="forma.css">
+    <!-- Подключение Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Подключение Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Boostmarket"/>
+    <meta property="og:site_name" content="Boostmarket"/>
+    <meta property="og:long_title" content="Boostmarket - агентство по продвижению на маркетплейсах&#10;Решения под ключ специально для Вашего бизнеса!&#10;Продвижение на Ozon, WB, Lamoda, ЯндексМаркет">
+    <meta name="description" content="Boostmarket - агентство по продвижению на маркетплейсах&#10;Решения под ключ специально для Вашего бизнеса!&#10;Продвижение на Ozon, WB, Lamoda, ЯндексМаркет">
+    <meta property="og:description" content="Boostmarket - агентство по продвижению на маркетплейсах&#10;Решения под ключ специально для Вашего бизнеса!&#10;Продвижение на Ozon, WB, Lamoda, ЯндексМаркет">
+    <!-- ниже для тг -->
+    <meta name="twitter:description" content="Boostmarket - агентство по продвижению на маркетплейсах&#10;Решения под ключ специально для Вашего бизнеса!&#10;Продвижение на Ozon, WB, Lamoda, ЯндексМаркет">
+    <meta property="og:image" content="img/logo_ico.png"/>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="vk:image" content="img/ssilka.png">
+</head>
+<body>
+    <!-- Основной контейнер с фоном -->
+    <div class="background">
+        <!-- Шапка -->
+        <div class="header">
+            <div class="header-text">
+                <h2><span>МАРИНА,</span><br> <span></span>пойдём в магазин</span></h2>
+            </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="header-buttons">
+            <button class="button request-button" onclick="openForm()">ДА! Я ПОЙДУ!</button>
+            <a href="#services" class="button service-button">чё?</a>
+        </div>
+
+        <!-- Всплывающее окно с формой -->
+        <div id="formOverlay" class="form-overlay">
+            <div class="form-container">
+                <span class="close-btn" onclick="closeForm()">&times;</span>
+                <h2>Определилась?</h2>
+                <form id="applicationForm">
+                    <select id="marketplace" name="marketplace" required>
+                        <option value="ОКЕЙ">ОКЕЙ</option>
+                        <option value="7 ШАГОВ">7 ШАГОВ</option>
+                        <option value="ЛЕТНА">ЛЕНТА</option>
+                    </select>
+                    <input type="text" id="timePicker" placeholder="Выбери время" required>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Услуги -->
+        <div class="services" id="services">
+            <h2><br><br><br>КУДА ИДЕМ? <span class="vertical-line"></span> <span class="tex">куда душа лежит сегодня...</span></h2>
+            <div class="hover-text-one">
+                <!-- ОКЕЙ -->
+                <figure class="effect-text-three okey-block">
+                    <figcaption>
+                        <h3>ОКЕЙ</h3>
+                        <p>Родной и всеми любимый насильник ценниками!</p>
+                        <button class="button request-button" onclick="openForm()">В ОКЕЙ !!! →</button>
+                    </figcaption>
+                </figure>
+                <!-- 7 ШАГОВ -->
+                <figure class="effect-text-four seven-steps-block">
+                    <figcaption>
+                        <h3>7 ШАГОВ</h3>
+                        <p>Пококосимся?.</p>
+                        <button class="button request-button" onclick="openForm()">В 7 ШАГОВ !!! →</button>
+                    </figcaption>
+                </figure>
+                <!-- ЛЕНТА -->
+                <figure class="effect-text-four lenta-block">
+                    <figcaption>
+                        <h3>ЛЕТНА</h3>
+                        <p>Такая далекая, но такая манящая.</p>
+                        <button class="button request-button" onclick="openForm()">В ЛЕНТУ !!! →</button>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Контакты -->
+        <br><br><br><br><br><br><br><br><br>
+        <div class="contact-section" id="contact">
+            <h2>ВРЕМЯ ВЫБРАТЬ МАРШРУТ</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>Выбор за табой, Манюша. Знай, мне похуй куда, лишь бы купить картошки...</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Определилась?</h3>
+                    <form id="contactForm">
+                        <select id="contactMarketplace" name="marketplace" required>
+                            <option value="ОКЕЙ">ОКЕЙ</option>
+                            <option value="7 ШАГОВ">7 ШАГОВ</option>
+                            <option value="ЛЕТНА">ЛЕНТА</option>
+                        </select>
+                        <input type="text" id="timePicker" placeholder="Выбери время" required>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>А ещё ты всегда можешь мне позвонить :Ъ <br><a href="tel:+79808048207">+7 (980) 804-82-07</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SVG-фильтр для текста -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" style="position: absolute;">
+        <defs>
+            <filter id="textOutline">
+                <!-- Создаем контур -->
+                <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="thicken" />
+                <feFlood flood-color="black" result="blackColor" />
+                <feComposite in="blackColor" in2="thicken" operator="in" result="outline" />
+                <!-- Наложение контура под текстом -->
+                <feMerge>
+                    <feMergeNode in="outline" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+</body>
+</html>

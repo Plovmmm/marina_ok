@@ -1,0 +1,471 @@
+.manrope-semibold {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+.background {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/fon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0,6; /* Полная непрозрачность (измените, если нужно) */
+    z-index: -1;
+}
+
+h2 {
+    text-align: center;
+    font-size: 38px;
+}
+
+/* шапка */
+.header {
+    min-height: 80vh; /* Блок занимает всю высоту экрана */
+    display: flex;
+    justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    padding: 40px 30px;
+    margin: 0 auto; /* Центрируем шапку на странице */
+    width: 100%; /* Шапка занимает всю доступную ширину */
+
+}
+
+.header-text {
+    flex: 1; /* Текст занимает доступное пространство */
+    max-width: 60%; /* Ограничиваем ширину текста */
+}
+
+
+
+
+
+/* Адаптация для мобильной версии */
+@media (max-width: 768px) {
+    .header {
+        min-height: 70vh; /* Блок занимает всю высоту экрана */
+        flex-direction: column; /* Размещаем элементы вертикально */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .header-text {
+        min-height: 50vh; /* Блок занимает всю высоту экрана */
+        max-width: 100%; /* Текст занимает всю ширину */
+        text-align: center; /* Центрируем текст */
+    }
+}
+
+
+
+.header h2 {
+    margin-left: 45px;
+    margin-bottom: -25px;
+    font-size: 4.5vw; /* Размер шрифта зависит от ширины экрана */
+    line-height: 1.1;
+    text-align: left;
+    font-weight: bold;
+    max-width: 1000px; /* Ограничиваем максимальную ширину текста */
+}
+
+.header h2 span {
+    color: #aa3dd2; /* Красный цвет для некоторых слов */
+    filter: url(#textOutline); /* Применяем SVG-фильтр */
+}
+
+.header h2 span:nth-child(3) {
+    margin-left: 180px;
+    color: #ec36b8; /* Черный цвет для второго span */
+}
+
+
+.header h2 span:first-child {
+    font-size: 7.5vw; /* Размер шрифта для марина */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Медиа-запрос для планшетов и небольших десктопов */
+@media (max-width: 1024px) {
+    .header h2 {
+        font-size: 48px; /* Фиксированный размер шрифта для планшетов */
+    }
+
+    .header h2 span:first-child {
+        font-size: 78px; /* Размер для Boostmarket на планшетах */
+    }
+    .header h2 span:nth-child(3) {
+        margin-left: 10px;
+        
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: flex-start; /* Выравниваем текст по левому краю */
+        margin-left: 0; /* Убираем отступ слева */
+        padding-top: 50px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .header-text {
+        max-width: 100%; /* Текст занимает всю ширину */
+    }
+
+    .header h2 {
+        font-size: 43px; /* Уменьшаем размер шрифта для мобильных */
+        line-height: 1.2; /* Уменьшаем межстрочный интервал */
+        text-align: center; 
+        margin-top: 100px;
+        margin-bottom: 0;
+        margin-left: 0; /* Убираем отступ слева */
+    }
+
+    .header h2 span:first-child {
+        font-size: 62px; /* Фиксированный размер для Boostmarket на мобильных */
+    }
+}
+
+/* Медиа-запрос для очень больших экранов */
+@media (min-width: 1600px) {
+    .header h2 {
+        font-size: 72px; /* Фиксированный размер шрифта для очень больших экранов */
+    }
+}
+/* подшапочные кнопки */
+/* Контейнер для кнопок */
+.header-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    gap: 40px; /* Расстояние между кнопками */
+    margin-top: 10px; /* Отступ сверху */
+    
+}
+
+/* Общие стили для кнопок */
+.button {
+    text-align: center;
+    font-size: 24px; /* Размер шрифта */
+    padding: 30px 13vh; /* Размеры кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 25px; /* Скругление краёв */
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    display: inline-block; /* Центрируем кнопку */
+    width: auto; /* Автоматическая ширина */
+}
+
+/* Стили для кнопки "Выбрать услугу" */
+.service-button {
+    background-color: #f3f3f3; /* Цвет кнопки */
+    color: #181414; /* Цвет текста кнопки */
+    order: 1; /* На компьютере эта кнопка будет справа */
+}
+
+/* Стили для кнопки "Оставить заявку" */
+.request-button {
+    background-color: #d04dff; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    order: 2; /* На компьютере эта кнопка будет слева */
+}
+
+/* Эффекты при наведении */
+.service-button:hover {
+    background-color: #ffffff; /* Изменение цвета при наведении */
+}
+
+.request-button:hover {
+    background-color: #e53d99; /* Изменение цвета при наведении */
+}
+
+/* Эффекты при нажатии */
+.service-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+.request-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header-buttons {
+        flex-direction: column; /* Кнопки вертикально */
+        align-items: center; /* Растягиваем кнопки на всю ширину */
+        gap: 15px; /* Расстояние между кнопками */
+        padding-bottom: 20px;
+    }
+
+    .button {
+        width: 90%; /* Кнопки занимают всю ширину */
+        font-size: 20px; /* Размер шрифта */
+        padding: 25px 20px; /* Размеры кнопки */
+        box-sizing: border-box; /* Учитываем padding в общей ширине */
+        order: 0; /* Сбрасываем порядок для мобильной версии */
+    }
+}
+
+/* uslugi */
+.services {
+    margin-top: 0px; /* Отступ сверху */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    min-height: 80vh;
+}
+.services h2 {
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 30px;
+    min-height: 11vh;
+}
+.services h2 span {
+    
+    font-size: 40px;
+    
+}
+.services h3 {
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease 0.2s; /* Плавные переходы с задержкой 0.2s */
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 450px; /* Максимальная ширина */
+    cursor: pointer;
+    position: relative; /* Для позиционирования текста */
+    overflow: hidden; /* Скрываем выходящий за пределы контент */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+
+
+
+/* Блок "Как с нами связаться" */
+.contact-section {
+    background-color: #54003e; /* Темный фон */
+    color: white; /* Белый текст */
+    min-height: 100vh; /* Блок занимает всю высоту экрана */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    padding: 50px 20px;
+    text-align: center;
+    box-sizing: border-box; /* Учитываем padding в общей высоте */
+}
+
+.contact-section h2 {
+    filter: url(#textOutline); /* Применяем SVG-фильтр */
+    margin-bottom: 40px;
+    font-size: 2.5em; /* Уменьшаем размер заголовка для мобильных */
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%; /* Занимает всю доступную ширину */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+.contact-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.contact-text p {
+    font-size: 1.5em; /* Уменьшаем размер текста для мобильных */
+    line-height: 1.6;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #f3f3f3; /* Светло-серый фон */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #181414; /* Черный текст */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #181414; /* Черный текст */
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white; /* Белый фон */
+    color: #181414; /* Черный текст */
+}
+
+.contact-form select {
+    appearance: none;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #d04dff; /* Красный фон */
+    color: white; /* Белый текст */
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #e53d99; /* Темно-красный фон при наведении */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 15px; /* Уменьшаем padding для мобильных */
+    }
+
+    .contact-section h2 {
+        font-size: 2em; /* Уменьшаем размер заголовка */
+        margin-bottom: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column; /* Элементы располагаются вертикально */
+        gap: 20px;
+        padding: 0;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .contact-text p {
+        font-size: 1.2em; /* Уменьшаем размер текста */
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.5em; /* Уменьшаем размер заголовка формы */
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form .submit-btn {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+    }
+}
+
+/* Футер */
+.footer {
+    background-color: transparent; /* Прозрачный фон */
+    color: #181414; /* Черный текст */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-phone p {
+    font-size: 18px;
+}
+
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Текст и форма вертикально */
+        gap: 20px;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .contact-form {
+        max-width: 100%; /* Форма на всю ширину */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Элементы футера вертикально */
+        gap: 20px;
+    }
+    .footer-phone p {
+    font-size: 16px;
+    }
+}

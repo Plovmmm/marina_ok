@@ -1,0 +1,266 @@
+/* Общие стили */
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+/* Стили для блока услуг */
+.hover-text-one {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 1200px; /* Увеличиваем максимальную ширину */
+    margin: 0 auto;
+}
+
+.hover-text-one figure {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px; /* Увеличиваем ширину блоков */
+    height: 300px; /* Фиксированная высота блоков */
+    border-radius: 15px; /* Добавляем скругление углов */
+    background-size: cover; /* Растягиваем изображение на весь блок */
+    background-position: center; /* Центрируем изображение */
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+/* Устанавливаем фоновые изображения для каждого блока */
+.okey-block {
+    background-image: url('img/ok.png');
+}
+
+.seven-steps-block {
+    background-image: url('img/7sh.png');
+}
+
+.lenta-block {
+    background-image: url('img/lenta.png');
+}
+
+.hover-text-one figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left; 
+}
+
+.hover-text-one figure h3 {
+    font-weight: 800;
+    margin: 0;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    transition: transform 0.35s;
+    transform: translate3d(0, 20px, 0);
+    filter: url(#textOutline); /* Применяем SVG-фильтр */
+    color: rgb(255, 195, 99); /* Цвет текста */
+}
+
+.hover-text-one figure p {
+    letter-spacing: 1px;
+    font-size: 17px;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    left: 30px;
+    top: 135px;
+    width: 80%;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 100%, 0);
+    filter: url(#textOutline); /* Применяем SVG-фильтр */
+    color: white; /* Цвет текста */
+}
+
+.hover-text-one figure .request-button {
+    position: absolute;
+    right: 30px; /* Кнопка в правом углу */
+    bottom: 30px; /* Кнопка внизу */
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #181414;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 20px, 0);
+}
+
+/* Эффект при наведении */
+.hover-text-one figure:hover {
+    opacity: 0.9;
+}
+
+.hover-text-one figure:hover h3 {
+    transform: translate3d(0, 0, 0);
+}
+
+.hover-text-one figure:hover p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.hover-text-one figure:hover .request-button {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Анимация для заголовка */
+.hover-text-one figure h3::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    content: '';
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+.hover-text-one figure:hover h3::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .services {
+        margin: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .services h2 {
+        font-size: 32px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .services h2 span {
+        font-size: 24px;
+        line-height: 25px;
+    }
+
+    .hover-text-one {
+        flex-direction: column; /* Блоки располагаются вертикально */
+        align-items: center; /* Центрируем блоки */
+    }
+
+    .hover-text-one figure {
+        width: 90%; /* Блоки занимают почти всю ширину */
+        max-width: none; /* Убираем ограничение по ширине */
+        margin-bottom: 20px; /* Отступ между блоками */
+    }
+}
+/* Эффект при наведении */
+figure.effect-text-three:hover img,
+figure.effect-text-four:hover img {
+    opacity: 0.4;
+    transform: translate3d(0, 0, 0);
+}
+
+figure.effect-text-three:hover h3,
+figure.effect-text-four:hover h3 {
+    transform: translate3d(0, 0, 0);
+}
+
+figure.effect-text-three:hover p,
+figure.effect-text-four:hover p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+figure.effect-text-three:hover .details-button,
+figure.effect-text-four:hover .details-button,
+figure.effect-text-three:hover .request-button,
+figure.effect-text-four:hover .request-button {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Анимация для заголовка */
+figure.effect-text-three h3::after,
+figure.effect-text-four h3::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    content: '';
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+figure.effect-text-three:hover h3::after,
+figure.effect-text-four:hover h3::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .services {
+        margin: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .services h2 {
+        font-size: 32px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+    }
+
+    .services h2 span {
+        font-size: 24px;
+        line-height: 25px;
+    }
+
+    .hover-text-one {
+        flex-direction: column; /* Блоки располагаются вертикально */
+        align-items: center; /* Центрируем блоки */
+    }
+
+    .hover-text-one figure {
+        width: 90%; /* Блоки занимают почти всю ширину */
+        max-width: none; /* Убираем ограничение по ширине */
+        margin-bottom: 20px; /* Отступ между блоками */
+    }
+    .hover-text-one figure img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 60%;
+        width: 50%; /* Картинка занимает правую половину */
+        height: 65%;
+        object-fit: contain; /* Изображение заполняет блок */
+        opacity: 0.8;
+        transition: opacity 0.35s, transform 0.35s;
+    }
+    
+}

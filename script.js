@@ -9,6 +9,16 @@ flatpickr("#timePicker", {
     defaultMinute: 0, // Начальное значение минут
 });
 
+flatpickr("#contactTimePicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true,
+    minuteIncrement: 1,
+    defaultHour: 12,
+    defaultMinute: 0,
+});
+
 // Функция для открытия формы
 function openForm() {
     document.getElementById('formOverlay').style.display = 'flex';
@@ -61,7 +71,7 @@ async function sendToTelegram(marketplace, time) {
 document.getElementById('applicationForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const marketplace = document.getElementById('marketplace').value;
-    const time = document.getElementById('timePicker').value; // Получаем выбранное время
+    const time = document.getElementById('timePicker').value; 
     sendToTelegram(marketplace, time);
 });
 
@@ -69,6 +79,6 @@ document.getElementById('applicationForm').addEventListener('submit', (e) => {
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const marketplace = document.getElementById('contactMarketplace').value;
-    const time = document.getElementById('timePicker').value; // Получаем выбранное время
+    const time = document.getElementById('contactTimePicker').value; 
     sendToTelegram(marketplace, time);
 });
